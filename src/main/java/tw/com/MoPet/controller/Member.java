@@ -40,7 +40,7 @@ public class Member {
 		return "login";
 	}
 
-	@GetMapping(path = "checklogin.controller")
+	@PostMapping(path = "checklogin.controller")
 	public String login(@RequestParam("userEmail") String user, @RequestParam("userPwd") String pwd, Model m,
 			HttpSession session) {
 		Map<String, String> errors = new HashMap<String, String>();
@@ -59,10 +59,7 @@ public class Member {
 		member temp = mService.checkLogin(user, pwd);
 		member temp2 = mService.findByAccount(user);
 		System.out.println(temp2.getId());
-//		Object com=session.getAttribute("loginOK");
-//		if (session.getAttribute("loginOK")== null) {
-//			return "login";
-//		}
+
 
 		if (temp != null) {
 			m.addAttribute("user", temp.getMemberEmail());

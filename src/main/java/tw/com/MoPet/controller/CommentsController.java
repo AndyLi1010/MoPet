@@ -38,11 +38,12 @@ public class CommentsController {
 	
 	@PostMapping("comments/add") //post送出資料
 	public String addComment(@ModelAttribute("comments") Comments comments,Model model,@RequestParam("comimg") MultipartFile file) throws IOException {
-		
+	
 		String temp = new String(Base64.getEncoder().encode(file.getBytes()));
 		String profile = "data:image/png;base64," + temp;
 		
 		comments.setCom_img(profile);
+		
 		
 		cService.insertComment(comments);
 		

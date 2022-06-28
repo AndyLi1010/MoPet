@@ -101,7 +101,7 @@ body {
 <body class="text-center">
 
 	<main class="form-signin">
-		<form action="checklogin.controller" method="get">
+		<form action="checklogin.controller" method="post">
 			<img class="mb-4" src="icons.png" alt="" width="100" height="100">
 			<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
